@@ -1,0 +1,120 @@
+
+.show {
+    display: block;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.buttons button {
+    width: 100px;
+    padding: 8px;
+    border-width: 1px;
+    margin-left: 5px;
+    background-color: #0081f298;
+    border-radius: 5px;
+}
+
+.stepper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.stepper * {
+    box-sizing: border-box;
+}
+
+
+.stepper .stepper-error {
+    background-color: rgba(255, 0, 0, 0.07);
+    padding: 20px 5px;
+    border-radius: 5px;
+
+}
+.stepper .stepper-header {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stepper .stepper-header .stepper-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.stepper .stepper-header .stepper-item  .stepper-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    border: 2px solid #0082F2;
+    align-items: center;
+    cursor: pointer;
+}
+
+.stepper .stepper-header .stepper-item.active .stepper-circle {
+    background-color: #0082F2;
+    border: none;
+}
+
+
+.stepper .stepper-header .stepper-item .stepper-label {
+    width: 150px;
+    overflow-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 55px;
+}
+
+
+.stepper .stepper-header .stepper-line {
+    height: 6px;
+    background-color: #F1F1F1;
+    flex-grow: 2;
+    position: relative;
+}
+
+
+.stepper .stepper-header .stepper-line::before {
+    content: '';
+    display: inline-block;
+    height: 6px;
+    width: 0;
+    background-color: #0082F2;
+    position: absolute;
+    transition: width .5s linear;
+}
+
+.stepper .stepper-header .stepper-line.active::before {
+    width: 100%;
+}
+
+
+.hidden {
+    display: none;
+}
+
+.stepper .stepper-contents {
+    margin-top: 50px;
+}
+
+.stepper .stepper-contents .stepper-content {
+    display: none;
+}
+
+.stepper .stepper-contents .stepper-content.show {
+    display: block;
+}

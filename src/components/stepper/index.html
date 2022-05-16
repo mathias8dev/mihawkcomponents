@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mihawk Stepper</title>
+
+    <link rel="stylesheet" href="./css/stepper.css">
+</head>
+
+<body>
+
+    <div class="stepper">
+
+        <div class="stepper-header">
+
+            <div class="stepper-item">
+                <div class="stepper-circle">1</div>
+                <div class="stepper-label">First</div>
+            </div>
+            <div class="stepper-line"></div>
+
+            <div class="stepper-item">
+                <div class="stepper-circle">2</div>
+                <div class="stepper-label">Second</div>
+            </div>
+            <div class="stepper-line"></div>
+
+            <div class="stepper-item">
+                <div class="stepper-circle">3</div>
+                <div class="stepper-label">Three</div>
+            </div>
+        </div>
+        <div class="stepper-contents">
+            <!-- The user is free to stylise it's content as he wants -->
+            <style>
+                .stepper-content {
+                    background-color: aqua;
+                    border-radius: 5px;
+                    padding: 10px;
+                    height: 70vh;
+                    width: 100%;
+                }
+
+                .stepper-content:nth-child(3) {
+                    background-color: rgba(180, 80, 80, 0.692);
+                }
+
+                .stepper-content:nth-child(4) {
+                    background-color: #C4C4C4;
+                }
+            </style>
+            <div class="stepper-content">
+                This is just the first content
+            </div>
+
+            <div class="stepper-content">
+                This is the second content
+            </div>
+
+            <div class="stepper-content">
+                This is the third content
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="buttons">
+        <button class="prev">Previous</button>
+        <button class="next">Next</but>
+    </div>
+
+    <script src="./js/stepper.js"></script>
+    <script>
+
+        let stepper = new Stepper('.stepper')
+
+        let prevButton = document.querySelector(".prev")
+        let nextButton = document.querySelector(".next")
+
+        prevButton.addEventListener('click', () => {
+            stepper.previous()
+        })
+
+        nextButton.addEventListener('click', () => {
+            stepper.next()
+        })
+
+        stepper.addStepChangeListener(function (currentStep) {
+            console.log(`You are at the ${currentStep + 1} step`)
+        })
+
+        stepper.addEndListener(function () {
+            console.log("I'm ended")
+        })
+    </script>
+</body>
+
+</html>
