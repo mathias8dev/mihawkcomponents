@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mihawk hlider</title>
+    <link rel="stylesheet" href="./css/hslider.css">
+</head>
+
+<body>
+    <div class="hslider">
+        <div class="hslider-item">Primaire</div>
+        <div class="hslider-buttons">
+            <button class="hslider-prev"><img src="./img/chevron-left.svg" alt="PrevButton" /></button>
+            <button class="hslider-next"><img src="./img/chevron-right.svg" alt="NextButton" /></button>
+        </div>
+    </div>
+
+    <div class="contents-independant">
+        <div class="content active">First</div>
+        <div class="content">Second</div>
+        <div class="content">Third</div>
+    </div>
+
+    <style>
+        .contents-independant {
+            margin-top: 20px;
+        }
+
+        .contents-independant .content {
+            width: 100%;
+            background-color: aliceblue;
+            height: 80vh;
+            border-radius: 5px;
+            padding: 10px;
+            display: none;
+        }
+
+        .contents-independant .content:nth-child(2) {
+            background-color: bisque;
+        }
+
+        .contents-independant .content:nth-child(3) {
+            background-color: rgb(142, 142, 204);
+        }
+
+        .contents-independant .content.active {
+            display: block;
+        }
+    </style>
+
+    <script src="./js/hslider.js"></script>
+
+    <script>
+
+        let hslider = new HSlider('.hslider', ['Primaire', 'Collège', 'Lycée'])
+
+        let contents = document.querySelectorAll('.contents-independant .content')
+
+        hslider.addPositionChangeListener((position) => {
+            console.log(`The current position is ${position}`)
+            contents.forEach((content) => {
+                content.classList.remove('active')
+            })
+            contents[position].classList.add('active')
+
+        })
+
+    </script>
+</body>
+
+</html>
