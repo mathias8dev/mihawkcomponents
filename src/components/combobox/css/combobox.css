@@ -1,0 +1,102 @@
+.combobox {
+  width: 100%;
+  position: relative;
+}
+
+.combobox .combobox-error {
+  background-color: rgba(255, 0, 0, 0.07);
+  padding: 20px 5px;
+  border-radius: 5px;
+}
+.combobox * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.combobox .combobox-input {
+  padding: 5px;
+  height: 50px;
+  background-color: #f1f1f1;
+  transition: border 0.5s linear;
+  align-items: center;
+  display: flex;
+}
+
+.combobox.active .combobox-input {
+  border: 1px solid #0b315e;
+}
+
+.combobox .combobox-input .combobox-left-icon {
+  display: none;
+}
+.combobox .combobox-input .combobox-left-icon.show {
+  display: block;
+  margin-right: 6px;
+}
+
+.combobox .combobox-input .combobox-left-icon img {
+  width: 30px;
+}
+
+.combobox .combox-input .combobox-left-icon {
+  justify-self: flex-start;
+}
+
+.combobox .combobox-input .combobox-right-icon {
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+  order: 3;
+}
+
+.combobox .combobox-input .combobox-right-icon:active {
+  transform: scale(0.98);
+}
+
+.combobox .combobox-input .combobox-right-icon img {
+  width: 12px;
+}
+
+.combobox .combobox-input .combobox-value {
+  color: #0b315e;
+  font-weight: 400;
+  flex-grow: 2;
+  font-size: 16px;
+  white-space: nowrap;
+  margin-left: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.combobox .combobox-box {
+  display: none;
+}
+
+.combobox.active .combobox-box {
+  display: block;
+  position: absolute;
+  top: 55px;
+  background-color: white;
+  border: 1px solid #0b315e;
+  width: 100%;
+  padding: 5px;
+  overflow: auto;
+}
+
+.combobox .combobox-box .combobox-item {
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.combobox .combobox-box .combobox-item:active {
+  background-color: unset;
+}
+
+.combobox .combobox-box .combobox-item.active {
+  background-color: #0b315e;
+  color: white;
+}

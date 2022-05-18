@@ -17,11 +17,19 @@ class HSlider {
             // Modify the innerhtml of the slider and display error
             this.#slider.innerHTML = `
                 <div class="hslider-error">
-                    Please setup correctly the stepper
+                    Please setup correctly the slider
                 </div>
             `
             return
         }
+
+        this.#slider.innerHTML = `
+            <div class="hslider-item"></div>
+            <div class="hslider-buttons">
+                <button class="hslider-prev"><img src="./img/chevron-left.svg" alt="PrevButton" /></button>
+                <button class="hslider-next"><img src="./img/chevron-right.svg" alt="NextButton" /></button>
+            </div>
+        `
 
         this.#items = items
         this.#currentPosition = 0

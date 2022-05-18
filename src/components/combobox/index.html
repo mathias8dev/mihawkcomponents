@@ -5,18 +5,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mihawk hlider</title>
-    <link rel="stylesheet" href="./css/hslider.css">
+    <title>Mihawk combobox</title>
+    <link rel="stylesheet" href="./css/combobox.css" />
 </head>
 
 <body>
-    <div class="hslider">
-    </div>
+    <div class="combobox"></div>
 
     <div class="contents-independant">
         <div class="content active">First</div>
         <div class="content">Second</div>
         <div class="content">Third</div>
+        <div class="content">Fourth</div>
+        <div class="content">Fith</div>
     </div>
 
     <style>
@@ -46,23 +47,22 @@
         }
     </style>
 
-    <script src="./js/hslider.js"></script>
+    <script src="./js/combobox.js"></script>
 
     <script>
 
-        let hslider = new HSlider('.hslider', ['Primaire', 'Collège', 'Lycée'])
+        let combobox = new Combobox('.combobox', ['1', '2', '3', '4', '5'], { componentDir: "./", leftImagePath: "./img/bill.svg" });
 
-        let contents = document.querySelectorAll('.contents-independant .content')
+        let contents = document.querySelectorAll('.contents-independant .content');
 
-        hslider.addPositionChangeListener((position) => {
-            console.log(`The current position is ${position}`)
-            contents.forEach((content) => {
-                content.classList.remove('active')
-            })
-            contents[position].classList.add('active')
-
-        })
-
+        combobox.addPositionChangeListener(position => {
+            console.log(`The current position is ${position}`);
+            console.log(`The selected value of the box is ${combobox.getValue()}`)
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            contents[position].classList.add('active');
+        });
     </script>
 </body>
 
