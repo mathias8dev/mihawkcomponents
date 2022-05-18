@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mihawk Switch</title>
+    <link rel="stylesheet" href="./css/switch.css">
+</head>
+
+<body>
+
+    <div id="container">
+
+        <h1>Quelques paramètres</h1>
+
+        <div class="settings">
+
+            <div class="setting">
+                <div class="title">
+                    <h3>Disable forwaded message</h3>
+                    <div class="description">Allows you to re-send messages withoud Forwarded tag</div>
+                </div>
+                <div class="switch message-forwarding"></div>
+            </div>
+            <div class="setting">
+                <div class="title">
+                    <h3>Anti-Delete Messages</h3>
+                    <div class="description">Other people cannot delete messages for you</div>
+                </div>
+                <div class="switch message-anti-delete"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+
+        .settings {}
+
+        .settings * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .settings .setting {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            background-color: #242424b0;
+            border-radius: 5px;
+            color: white;
+            padding: 10px;
+        }
+
+        .settings .setting .title {
+            width: 90%;
+        }
+
+        .settings .setting .title h3 {
+            margin-bottom: 5px;
+        }
+
+        .settings .setting .title .description {
+            color: rgb(24, 23, 23);
+        }
+    </style>
+
+    <script src="./js/switch.js"></script>
+
+    <script>
+
+        let messageForwardingSwitch = new Switch('.switch.message-forwarding', { state: false })
+        let messageAntiDeleteSwitch = new Switch('.switch.message-anti-delete', { state: true })
+
+        messageForwardingSwitch.addOnStateChangeListener((state) => {
+            console.log(`The state of message-forwarding switch is ${state}`)
+        })
+
+        messageAntiDeleteSwitch.addOnStateChangeListener((state) => {
+            console.log(`The state of message-anti-delete switch is ${state}`)
+        })
+
+
+    </script>
+
+</body>
+
+</html>
