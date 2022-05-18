@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mihawk CInput</title>
+    <link rel="stylesheet" href="./css/cinput.css">
+</head>
+
+<body>
+
+    <div class="cinput name"></div>
+    <div class="cinput firstname"></div>
+    <div class="cinput email"></div>
+    <div class="cinput password"></div>
+    <div class="cinput password_confirmation"></div>
+
+    <style>
+        .cinput {
+            margin-top: 10px;
+        }
+    </style>
+
+    <script src="./js/cinput.js"></script>
+
+    <script>
+        let nameInput = new CInput('.cinput.name', { name: 'name', placeholder: "Nom de famille", leftImagePath: "./img/search-normal.svg" })
+        let firstnameInput = new CInput('.cinput.firstname', { name: "firstname", placeholder: "Vos Prénoms", leftImagePath: "./img/profile-2user.svg" })
+        let addressInput = new CInput('.cinput.email', { name: "address", placeholder: "Votre email", type: "email", leftImagePath: "./img/email.svg" })
+        let passwordInput = new CInput('.cinput.password', { name: "address", placeholder: "Votre mot de passe", type: "password", leftImagePath: "./img/lock.svg" })
+        let passwordConfirmationInput = new CInput('.cinput.password_confirmation', { name: "address", placeholder: "Confirmation", type: "password", leftImagePath: "./img/lock.svg" })
+
+        passwordInput.addValueChangeListener((value) => {
+            // passwordInput.setError()
+            console.log(passwordInput.getValue())
+        })
+    </script>
+</body>
+
+</html>

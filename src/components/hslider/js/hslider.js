@@ -7,13 +7,14 @@ class HSlider {
     #currentPosition
     #listeners
 
-    constructor(selector = '.hslider', items = []) {
-        this.#init(selector, items)
+    constructor(selector = '.hslider', items = [], options = {}) {
+        this.#init(selector, items, options)
     }
 
-    #init(selector, items) {
+    #init(selector, items, options) {
         this.#slider = document.querySelector(selector)
-        if (items.length == 0) {
+        let componentDir = options.componentDir
+        if (items.length === 0 || componentDir === undefined) {
             // Modify the innerhtml of the slider and display error
             this.#slider.innerHTML = `
                 <div class="hslider-error">
@@ -26,8 +27,8 @@ class HSlider {
         this.#slider.innerHTML = `
             <div class="hslider-item"></div>
             <div class="hslider-buttons">
-                <button class="hslider-prev"><img src="./img/chevron-left.svg" alt="PrevButton" /></button>
-                <button class="hslider-next"><img src="./img/chevron-right.svg" alt="NextButton" /></button>
+                <button class="hslider-prev"><img src="${componentDir}/img/chevron-left.svg" alt="PrevButton" /></button>
+                <button class="hslider-next"><img src="${componentDir}/img/chevron-right.svg" alt="NextButton" /></button>
             </div>
         `
 

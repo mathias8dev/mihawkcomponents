@@ -41,10 +41,11 @@ class Combobox {
 
     #setupView(options) {
         let leftImagePath = options.leftImagePath
+        let componentDir = options.componentDir
         this.#combobox.innerHTML = `
             <div class="combobox-input">
                 <div class="combobox-left-icon ${leftImagePath === undefined ? '' : 'show'}"><img src="${leftImagePath !== undefined ? leftImagePath : ''}" alt="" /></div>
-                <div class="combobox-right-icon"><img src="./img/chevron-down.svg" alt="" /></div>
+                <div class="combobox-right-icon"><img src="${componentDir}/img/chevron-down.svg" alt="" /></div>
                 <div class="combobox-value"></div>
             </div>
 
