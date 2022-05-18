@@ -1,0 +1,51 @@
+.sstat .sstat-error {
+  background-color: rgba(255, 0, 0, 0.07);
+  padding: 20px 5px;
+  border-radius: 5px;
+}
+
+.sstat {
+  width: 160px;
+  height: 100px;
+  position: relative;
+  background-color: #fefefe;
+  /* box-shadow: 0 0 3px rgba(202, 202, 202, 1); */
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sstat:active {
+  transform: scale(0.98);
+}
+
+.sstat * {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.sstat .sstat-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #0b315e;
+  margin-top: 10px;
+}
+
+.sstat .sstat-value {
+  font-size: 26px;
+  color: #0082f2;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.sstat .sstat-image {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
+.sstat .sstat-image img {
+  width: 34px;
+}
