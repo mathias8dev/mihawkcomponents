@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mihawk SPI progress bar</title>
+    <link rel="stylesheet" href="./css/progressbar.css">
+</head>
+
+<body>
+
+    <div id="container">
+
+        <h3>Progression du téléchargement du fichier</h3>
+        <div class="progressbar"></div>
+    </div>
+
+    <script src="./js/progressbar.js"></script>
+    <script>
+        let progressbar = new Progressbar('.progressbar', { value: 30 })
+
+        let progress = 0
+        const interval = setInterval(() => {
+            progressbar.setProgress(progress)
+            progress++
+        }, 1000)
+
+        progressbar.addOnProgressChangeListener((value) => {
+            console.log("The progress is ", value)
+
+            if (value >= 100) {
+                clearInterval(interval)
+                console.log("The download is ended")
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
