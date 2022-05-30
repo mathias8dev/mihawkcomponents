@@ -6,6 +6,7 @@ class Combobox {
     #combobox
     #comboboxValue
     #comboboxBox
+    #placeholder
     #currentPosition
     #comboElements
     #listeners
@@ -17,6 +18,7 @@ class Combobox {
     #init(selector, items, options) {
 
         let componentDir = options.componentDir
+        this.#placeholder = options.placeholder === undefined ? '' : options.placeholder
         this.#combobox = document.querySelector(selector)
         if (items.length == 0 || componentDir === undefined) {
             // Modify the innerhtml of the slider and display error
@@ -36,7 +38,7 @@ class Combobox {
         this.#currentPosition = 0
         this.#listeners = []
         this.#setupEvents()
-        this.#updateView()
+        // this.#updateView()
     }
 
     #setupView(options) {
@@ -55,7 +57,7 @@ class Combobox {
 
         this.#comboboxBox = this.#combobox.querySelector('.combobox-box')
         this.#comboboxValue = this.#combobox.querySelector('.combobox-input .combobox-value')
-        this.#comboboxValue.innerHTML = `${this.#items[0]}`
+        this.#comboboxValue.innerHTML = `${this.#placeholder}`
         this.#items.forEach((item) => {
             let element = document.createElement('div')
             element.classList.add('combobox-item')
@@ -128,6 +130,14 @@ class Combobox {
 
     getPosition() {
         return this.#currentPosition
+    }
+
+    setError() {
+        this.#combobox.classList.add('error')
+    }
+
+    unsetError() {
+        this.#combobox.classList.remove('error')
     }
 
     getValue() {

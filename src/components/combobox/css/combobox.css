@@ -1,6 +1,11 @@
 .combobox {
   width: 100%;
   position: relative;
+  box-sizing: border-box;
+}
+
+.combobox.error {
+  border: 1px solid rgb(197, 46, 46);
 }
 
 .combobox .combobox-error {
@@ -82,6 +87,11 @@
   width: 100%;
   padding: 5px;
   overflow: auto;
+  z-index: 1000;
+}
+
+.combobox.active.error .combobox-box {
+  border: 1px solid rgb(197, 46, 46);
 }
 
 .combobox .combobox-box .combobox-item {
@@ -90,6 +100,11 @@
   padding: 10px;
   width: 100%;
   margin: 5px 0;
+}
+
+.combobox .combobox-box .combobox-item:hover {
+  background-color: #0b315e;
+  color: white;
 }
 
 .combobox .combobox-box .combobox-item:active {

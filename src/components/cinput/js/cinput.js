@@ -15,7 +15,7 @@ class CInput {
         this.#cinput = document.querySelector(selector)
         let formName = options.name === undefined ? '' : options.name
         let inputType = options.type === undefined ? 'text' : options.type
-        if (formName === '' || !['text', 'email', 'tel', 'password'].includes(inputType)) {
+        if (formName === '' || !['text', 'email', 'tel', 'password', 'date'].includes(inputType)) {
             this.#cinput.innerHTML = `
                 <div class="cinput-error">
                     Please setup correctly the input.
@@ -33,6 +33,8 @@ class CInput {
     #setupView(options) {
         let placeholder = options.placeholder !== undefined ? options.placeholder : ''
         let name = options.name
+        let inputType = options.type === undefined ? 'text' : options.type
+
         let leftImagePath = options.leftImagePath
         let imageTag = leftImagePath !== undefined ? `<img class="cinput-left" src="${leftImagePath}">` : ''
 
@@ -42,7 +44,7 @@ class CInput {
         this.#cinput.innerHTML = `
              <div class="cinput-form-control">
                 ${imageTag}
-                <input type="${options.type}" name="${name}" placeholder="${placeholder}">
+                <input type="${inputType}" name="${name}" placeholder="${placeholder}">
                 ${rightImageTag}
             </div>
         `

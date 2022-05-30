@@ -108,11 +108,10 @@ class Stepper {
         }
 
         this.currentStep++
+        this.#updateView()
         this.#stepChangeListeners.forEach(listener => {
             listener(this.currentStep)
         })
-
-        this.#updateView()
     }
 
     previous() {
@@ -121,11 +120,10 @@ class Stepper {
         }
 
         this.currentStep--
+        this.#updateView()
         this.#stepChangeListeners.forEach(listener => {
             listener(this.currentStep)
         })
-
-        this.#updateView()
     }
 
 

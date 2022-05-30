@@ -1,0 +1,64 @@
+.cfile {
+  box-sizing: border-box;
+}
+
+.cfile .cfile-form-control *.hidden {
+  display: none;
+}
+.cfile * {
+  box-sizing: border-box;
+}
+.cfile .cfile-form-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid #0b315e;
+  padding: 5px;
+  height: 50px;
+  color: #0b315e;
+  background-color: #f1f1f1;
+}
+
+.cfile .cfile-error {
+  background-color: rgba(255, 0, 0, 0.07);
+  padding: 20px 5px;
+  border-radius: 5px;
+}
+
+.cfile.error {
+  border: 1px solid rgb(197, 46, 46);
+}
+
+.cfile.fill .cfile-form-control {
+  background-color: #0b315e;
+  border: unset;
+  color: white;
+}
+
+.cfile.fill .cfile-form-control img.cfile-left {
+}
+
+.cfile .cfile-form-control img {
+  width: 24px;
+  margin-right: 3px;
+}
+
+.cfile .cfile-form-control img.cfile-right {
+  margin-left: 3px;
+  display: inline-block;
+  background-color: white;
+  object-fit: contain;
+  object-position: center;
+  width: 50px;
+  height: 50px;
+  justify-self: flex-end;
+}
+
+.cfile .cfile-form-control .cfile-form-control-fake_input {
+  height: 100%;
+  flex-grow: 3;
+  background-color: unset;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: inherit;
+}
